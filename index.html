@@ -52,17 +52,16 @@
     return [t, "Celsius"];
 }
 		
-		$(document).ready(function(){
-			$("button").click(function(){
-				var t = $('#temp').val(); // Celsius
-				var u = $('#unit').val();
-		
-				if (!validateTemperature(t)) return;
-		
-		        var [t1, u1] = convertTemperature(t, u);
-				alert("Temperature is " + t1 + " in " + u1);
-			});
-		});
+$(document).ready(function(){
+    $("button").click(function(){
+        var t = $('#temp').val();
+        var u = $('#unit').val();
+        if (!validateTemperature(t)) return;
+
+        var [t1, u1] = convertTemperature(t, u);
+        $("#result").html(`Temperature is ${t1} in ${u1}`);
+    });
+});
 		</script>
 </body>
 </html>
